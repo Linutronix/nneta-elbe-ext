@@ -6,5 +6,7 @@ PACKAGE_BUILD += "hello libgpio bla-file"
 image_postprocess() {
     echo "hello" > /etc/test
     image_groupadd grumpy "--gid 0"
+    image_groupadd sysgrp "--system"
     image_useradd dev "--uid 0 --gid 0 --home-dir /root --shell /bin/sh -G grumpy" dev
+    image_useradd sysuser "-r --home-dir /var/run/sysuser --shell /bin/false"
 }
