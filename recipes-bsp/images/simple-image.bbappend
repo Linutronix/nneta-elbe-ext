@@ -1,7 +1,7 @@
 # take care the binary packages might have other names than the .bb recipes
-IMAGE_INSTALL += "hello=0.1+g7f35942-1 libgpio1"
+IMAGE_INSTALL += "hello=0.1+g7f35942-1 libgpio1 bla-file"
 # list of .bb recipes that should be build
-PACKAGE_BUILD += "hello libgpio"
+PACKAGE_BUILD += "hello libgpio bla-file"
 
 image_postprocess() {
     echo "hello" > /etc/test
